@@ -37,16 +37,19 @@ Route::get('/dashboard', function () {
 // })->middleware(['auth', 'verified'])->name('permission');
 
 Route::group(['middleware' => ['auth', 'role:admin|user|super-admin']], function() {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    /**
+     * Profile Routes
+     */
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 
      /**
      * Permission Routes
      */
-    Route::group(['prefix' => 'permissions'], function () {
-        Route::get('/all', [PermissionsController::class, 'allPermissionData'])->name('permissions.all');
-    });
     
     Route::resource('permissions', PermissionsController::class);
 

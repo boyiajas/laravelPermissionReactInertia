@@ -10,25 +10,7 @@ export default function Index(props) {
 
     const [permissions, setPermissions] = useState(props.permissions.data);
     const { theme, toggleTheme } = useContext(ThemeContext);
-
-    /* const handleDelete = (permissionId) => {
-        if (confirm('Are you sure you want to delete this permission?')) {
-          try {
-            router.delete(route('permissions.destroy', permissionId))
-            .then(response => {
-                router.get(route('permissions.all'));
-
-                // Deletion was successful, handle as needed
-                console.log('Permission deleted successfully');
-            })
-            
-          } catch (error) {
-            // Handle the deletion error
-            console.error('Failed to delete permission:', error);
-          }
-        }
-      }; */
-   
+ 
 
     const handleDelete = (permissionId) => {
          if (confirm('Are you sure you want to delete this permission?')) {
@@ -36,10 +18,8 @@ export default function Index(props) {
             .then(response => {
                 // Handle successful deletion
                 console.log('Permission deleted successfully');
-                // Refresh the page or update the component as needed
-                //setPermissions(permissions.filter(permission => permission.id !== permissionId));
                  // Refetch the updated permissions list from the server
-                router.get(route('permissions.all'));
+                router.get(route('permissions.index'));
             })
             .catch(error => {
                 // Handle error
