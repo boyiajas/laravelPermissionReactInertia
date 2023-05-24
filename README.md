@@ -1,66 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<b>Login as Admin</b>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Screenshot from 2023-05-24 13-47-40](https://github.com/boyiajas/laravelPermissionReactInertia/assets/12686949/0a20b19f-2eda-427e-88dd-eace212d4ef0)
 
-## About Laravel
+![Screenshot from 2023-05-24 13-47-54](https://github.com/boyiajas/laravelPermissionReactInertia/assets/12686949/6b1b2421-85b6-4bc9-97ac-86889d2bce6c)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Screenshot from 2023-05-24 13-48-25](https://github.com/boyiajas/laravelPermissionReactInertia/assets/12686949/52a2ae48-5eaf-4715-bd84-f26d58592cb2)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<b>Login as User</b>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![Screenshot from 2023-05-24 13-48-52](https://github.com/boyiajas/laravelPermissionReactInertia/assets/12686949/a0d01422-a697-4737-a18d-897d74ed2d87)
 
-## Learning Laravel
+## To run the project following the instruction below:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Create a folder and Git clone this project using the command below inside your folder/directory, note the dot means clone the file into the current directory
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    <b>git clone https://github.com/boyiajas/laravelPermissionReactInertia.git .</b>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. Run the composer install command below in the project directory/folder in the terminal to install all the packages and dependencies required  
 
-## Laravel Sponsors
+    <b>composer install </b>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. in linux use the command below create your .env file by copy the .env.example to the .env file 
+    
+    <b>cp .env.example .env </b>
 
-### Premium Partners
+4. update your database name inside the .env file and use migrate command below to create all the project tables and seed the default data
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    <b>php artisan migrate </b>
 
-## Contributing
+    <b>php artisan db:seed </b>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+5. Generate a new application key by using the below command 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    <b> php artisan key:generate </b>
 
-## Security Vulnerabilities
+6. then for your frontend run the below command to install all the required npm package
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   <b>npm install </b>
 
-## License
+7. then start your backend server using the command below:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   <b> php artisan serve </b>
+
+
+8. then finally open another terminal and run the below command 
+    
+   <b> npm run build / npm run dev  </b>
+
+
+
+## You can login using the default credentials below:
+
+name : Super Admin <br/>
+email : superadmin@example.com <br/>
+password: password <br/>
+
+name : Admin <br/>
+email : admin@example.com <br/>
+password: password <br/>
+
+name : user <br/>
+email : user@example.com <br/>
+password: password <br/>
