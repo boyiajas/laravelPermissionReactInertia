@@ -93,13 +93,6 @@ class PermissionsController extends Controller
         return redirect()->route('permissions.index')
             ->withSuccess(__('Permission updated successfully.'));
     }
-
-    public function allPermissionData()
-    {
-        $permissions = Permission::latest()->paginate(6);
-        return response()->json(compact('permissions'));
-    }
-
     /**
      * Remove the specified resource from storage.
      *
