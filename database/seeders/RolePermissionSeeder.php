@@ -48,11 +48,13 @@ class RolePermissionSeeder extends Seeder
         $role1->givePermissionTo('role list');
         $role1->givePermissionTo('user list');
         $role2 = Role::create(['name' => 'admin']);
+
+        $role3 = Role::create(['name' => 'super-admin']);
         
         foreach ($permissions as $permission) {
             $role2->givePermissionTo($permission);
+            $role3->givePermissionTo($permission);
         }
-        $role3 = Role::create(['name' => 'super-admin']);
         // gets all permissions via Gate::before rule; see AuthServiceProvider
         // create demo users
         $user = \App\Models\User::factory()->create([
