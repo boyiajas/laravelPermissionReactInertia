@@ -110,7 +110,15 @@ class RolesController extends Controller
     {
         $role->delete();
 
-        return redirect()->route('roles.index')
-            ->with('success', 'Role deleted successfully');
+        /* return redirect()->route('roles.index')
+            ->with('success', 'Role deleted successfully'); */
+        try {
+            $role->delete();
+        
+            return response()->json(['message' => 'Permission deleted successfully'], 200);
+        } catch (\Exception $e) {
+            
+            return response()->json(['error' => 'Failed to delete permission'], 500);
+        }
     }
 }

@@ -70,7 +70,7 @@ export default function Index(props) {
                         {/*  @csrf
                             @method('PATCH') */}
                             <div className="py-2">
-                                <label for="name"
+                                <label htmlFor="name"
                                 className="block font-medium text-sm text-gray-700 dark:text-white {{$errors->has('name') ? ' text-red-400' : ''}}">Name</label>
                                 
                                {  <TextInput

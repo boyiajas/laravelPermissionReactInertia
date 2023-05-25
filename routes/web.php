@@ -53,6 +53,8 @@ Route::group(['middleware' => ['auth', 'role:admin|user|super-admin']], function
     
     Route::resource('permissions', PermissionsController::class);
 
+    
+
      /**
      * User Routes
      */
