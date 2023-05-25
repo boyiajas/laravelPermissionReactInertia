@@ -8,6 +8,24 @@ export default function Index(props) {
 
     const [roles, setRoles] = useState(props.roles.data);
     const { theme, toggleTheme } = useContext(ThemeContext);
+
+    const handleDelete = (roleId) => {
+        if (confirm('Are you sure you want to delete this role?')) {
+           axios.delete(route('roles.destroy', roleId))
+           .then(response => {
+               // Handle successful deletion
+               console.log('Roles deleted successfully');
+                // Refetch the updated permissions list from the server
+                setRoles(roles.filter(role => role.id !== roleId));
+               //router.get(route('roles.index'));
+           })
+           .catch(error => {
+               // Handle error
+               console.error('Failed to delete role:', error);
+               // Handle error feedback to the user
+           });
+       } 
+   };
     
     return (
         <AuthenticatedLayout
@@ -80,11 +98,10 @@ export default function Index(props) {
                                                                         Edit
                                                                     </Link>
                                                                     &nbsp;
-                                                                    {/* @csrf
-                                                                    @method('DELETE') */}
-                                                                    <Link href={route('roles.destroy', role.id)} className="px-4 py-2 text-white bg-red-600">
-                                                                        Delete
-                                                                    </Link>
+
+                                                                    <button  type="button" onClick={() => handleDelete(role.id)} className="px-4 py-2 text-white bg-red-600">
+                                                                         Delete
+                                                                    </button>
                                                                    
                                                                 </form>
                                                             </td>

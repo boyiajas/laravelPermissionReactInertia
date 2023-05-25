@@ -99,8 +99,6 @@ export default function Index(props) {
                                                                         Edit
                                                                     </Link>
                                                                     &nbsp;
-                                                                    {/* @csrf
-                                                                    @method('DELETE') */}
                                                                     
                                                                     <button  type="button" onClick={() => handleDelete(permission.id)} className="px-4 py-2 text-white bg-red-600">
                                                                          Delete

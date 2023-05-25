@@ -79,16 +79,11 @@ class PermissionsController extends Controller
      * @param  Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $permission = null)
+    public function update(Permission $permission, Request $request)
     {
-        dd($permission, $request->all());
-        $request->validate([
-            'name' => 'required|unique:permissions,name,'.$permission
-        ]);
-
         //Permission
-
-        //$permission->update($permission);
+        $permission->name = $request->name;
+        $permission->save();
 
         return redirect()->route('permissions.index')
             ->withSuccess(__('Permission updated successfully.'));

@@ -63,7 +63,7 @@ export default function Index(props) {
                         {/*  @csrf
                             @method('PATCH') */}
                             <div className="py-2">
-                                <label for="name"
+                                <label htmlFor="name"
                                 className="block font-medium text-sm text-gray-700 dark:text-white {{$errors->has('name') ? ' text-red-400' : ''}}">Name</label>
                                 
                                {  <TextInput
@@ -107,7 +107,7 @@ export default function Index(props) {
                             </div>
                             <div className="flex justify-end mt-4">
                                 <button type='submit'
-                                class='inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 dark:text-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'>
+                                className='inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 dark:text-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'>
                                 Create
                                 </button>
                             </div>
